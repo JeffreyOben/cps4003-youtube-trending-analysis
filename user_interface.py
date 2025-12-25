@@ -1,21 +1,23 @@
 def display_menu():
-	# prints menu in the terminal
 	print("=" * 40)
 	print("   YouTube Trending Videos Analysis")
 	print("="*40)
 	print("1. Load Data")
-	print("2. Basic Processing (Summary Stats)")
-	print("3. Intermediate Processing (Averages/Ratios)")
-	print("4. Visualisations (Charts)")
-	print("5. Export Data (JSON/CSV)")
-	print("6. Exit")
+	print("2. Data Processing")
+	print("3. Visualisations (Charts)")
+	print("4. Exports")
+	print("5. Exit")
+
+def data_processing_menu():
+	print("1. Basic Processing (Summary Stats)")
+	print("2. Intermediate Processing (Averages/Ratios)")
+	print("3. Go Back\n")
+
+def exporter_menu():
+	print("1. Export Data (JSON)")
+	print("2. Export Data (CSV)")
+	print("3. Go Back\n")
 
 def get_choice():
-	choice = input("\nEnter your choice (1-6): ")
+	choice = input("\nEnter your choice: ")
 	return choice
-
-# Text-based UI helper functions
-
-# Print menu
-# Get user input
-# Validate choices

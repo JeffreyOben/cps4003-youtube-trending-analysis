@@ -1,4 +1,5 @@
 import csv
+import json
 
 def load_data(file_path):
     print(f"\nLoading CSV file from {file_path}...")
@@ -20,16 +21,5 @@ def load_data(file_path):
         print(f"ERROR: {e}")
         data = None
 
-    input("\nPress Enter to return to the main menu...")
+    input("\nPress Enter to return to the main menu...\n")
     return data
-
-# Only job: load and prepare data
-
-# Responsibilities:
-# Read CSV
-# Convert types (int, date, datetime)
-# Handle missing values
-# Return structured data (list of dicts)
-
-row_headings = ['video_id', 'trending_date', 'title', 'channel_title', 'category_id', 'publish_time', 'tags', 'views', 'likes',
-             'dislikes', 'comment_count', 'thumbnail_link', 'comments_disabled', 'ratings_disabled', 'video_error_or_removed', 'description']
