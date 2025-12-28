@@ -20,14 +20,18 @@ def main():
         elif choice == "2":
             if loaded_data:
                 while True:
-                # show data_processing menu
+                    # show data_processing menu
                     user_interface.data_processing_menu()
                     choice = user_interface.get_choice()
                     if choice == "1":
-                        data_processing.basic_processing(loaded_data)
+                        data_processing.basic_analysis(loaded_data)
                     elif choice == "2":
-                        data_processing.intermediate_processing(loaded_data)
+                        data_processing.intermediate_analysis(loaded_data)
                     elif choice == "3":
+                        data_processing.advanced_analysis(loaded_data)
+                    elif choice == "4":
+                        data_processing.get_video_details(loaded_data)
+                    elif choice == "5":
                         break
                     else:
                         print("!!!Invalid choice. Please try again. choices 1-3\n")
@@ -36,11 +40,13 @@ def main():
         elif choice == "3":
             if loaded_data:
                 visualisation.visualise_data()
-                    
+            else:
+                print("\n !!!Please load data first.\n")
+
         elif choice == "4":
             if loaded_data:
                 while True:
-                # show exporter menu
+                    # show exporter menu
                     user_interface.exporter_menu()
                     choice = user_interface.get_choice()
                     if choice == "1":
@@ -48,8 +54,15 @@ def main():
                     elif choice == "2":
                         exporter.export_data_csv(loaded_data)
                     elif choice == "3":
+                        exporter.selected_video_details(loaded_data)
+                    elif choice == "4":
+                        exporter.top_10_trending_videos(loaded_data)
+                    elif choice == "5":
+                        pick_filter_choice(loaded_data)
+                    elif choice == "6":
                         break
-                    else: print("!!!Invalid choice. Please try again. choices 1-3\n")
+                    else:
+                        print("!!!Invalid choice. Please try again. choices 1-3\n")
             else:
                 print("\n !!!Please load data first.\n")
         elif choice == "5":
@@ -57,6 +70,24 @@ def main():
             break
         else:
             print("!!!Invalid choice. Please try again. choices 1-6\n")
+
+# handle filter menu actions
+
+
+def pick_filter_choice(loaded_data):
+    while True:
+        user_interface.filter_menu()
+        choice = user_interface.get_choice()
+        if choice == "1":
+            exporter.filter_by_category(loaded_data)
+        elif choice == "2":
+            exporter.filter_by_channel(loaded_data)
+        elif choice == "3":
+            exporter.filter_by_trending_period(loaded_data)
+        elif choice == "4":
+            break
+        else:
+            print("!!!Invalid choice. Please try again. choices 1-4\n")
 
 
 if __name__ == "__main__":

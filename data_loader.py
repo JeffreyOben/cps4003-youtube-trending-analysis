@@ -21,5 +21,5 @@ def load_data(file_path):
         print(f"ERROR: {e}")
         data = None
 
-    input("\nPress Enter to return to the main menu...\n")
+    input("\nPress Enter to continue...\n")
     return data
