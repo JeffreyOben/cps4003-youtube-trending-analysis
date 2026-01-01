@@ -7,7 +7,6 @@ import visualisation
 file_path = "data/youtube_trending_videos.csv"
 warn = "\n !!!Please load data first.\n"
 
-
 def main():
     loaded_data = None
 
@@ -28,7 +27,7 @@ def main():
                     elif choice == "2":
                         data_processing.intermediate_analysis(loaded_data)
                     elif choice == "3":
-                        data_processing.advanced_analysis(loaded_data)
+                        advanced_data_processing_menu(loaded_data)
                     elif choice == "4":
                         data_processing.get_video_details(loaded_data)
                     elif choice == "5":
@@ -39,7 +38,16 @@ def main():
                 print("\n !!!Please load data first.\n")
         elif choice == "3":
             if loaded_data:
-                visualisation.visualise_data()
+                user_interface.visualisation_menu()
+                choice = user_interface.get_choice()
+                if choice == "1":
+                    visualisation.basic_visualisations()
+                elif choice == "2":
+                    visualisation.intermediate_visualisations()
+                elif choice == "3":
+                    visualisation.advanced_visualisations()
+                elif choice == "4":
+                    break
             else:
                 print("\n !!!Please load data first.\n")
 
@@ -58,8 +66,14 @@ def main():
                     elif choice == "4":
                         exporter.top_10_trending_videos(loaded_data)
                     elif choice == "5":
-                        pick_filter_choice(loaded_data)
+                        exporter.export_recommendations(loaded_data)
                     elif choice == "6":
+                        exporter.export_anomaly_detection(loaded_data)
+                    elif choice == "7":
+                        exporter.export_predictive_trending_duration(loaded_data)
+                    elif choice == "8":
+                        pick_filter_choice(loaded_data)
+                    elif choice == "9":
                         break
                     else:
                         print("!!!Invalid choice. Please try again. choices 1-3\n")
@@ -72,8 +86,6 @@ def main():
             print("!!!Invalid choice. Please try again. choices 1-6\n")
 
 # handle filter menu actions
-
-
 def pick_filter_choice(loaded_data):
     while True:
         user_interface.filter_menu()
@@ -88,6 +100,22 @@ def pick_filter_choice(loaded_data):
             break
         else:
             print("!!!Invalid choice. Please try again. choices 1-4\n")
+            
+# handle advanced data processing menu actions
+def advanced_data_processing_menu(loaded_data):
+    while True:
+        user_interface.advanced_data_processing_menu()
+        choice = user_interface.get_choice()
+        if choice == "1":
+            data_processing.show_recommendations(loaded_data)
+        elif choice == "2":
+            data_processing.show_tag_analysis(loaded_data)
+        elif choice == "3":
+            data_processing.show_anomaly_detection(loaded_data)
+        elif choice == "4":
+            data_processing.show_predictive_trending_duration(loaded_data)
+        elif choice == "5":
+            break
 
 
 if __name__ == "__main__":
