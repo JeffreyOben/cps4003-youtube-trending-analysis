@@ -366,4 +366,4 @@ def show_predictive_trending_duration(loaded_data):
             f"   Predicted Trending Duration: {video['predicted_trending_days']} days\n")
 
     input("Press Enter to return...")
-# The system estimates a video’s potential trending duration using a heuristic model based on views, likes, and comments. An engagement score is calculated for each video and mapped to a predicted number of trending days. Results are displayed directly in the terminal.
+# The system estimates a video’s potential trending duration using a heuristic model based on views, likes, and comments. An engagement score is calculated for each video and mapped to a predicted number of trending days.
