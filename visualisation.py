@@ -6,11 +6,7 @@ from datetime import datetime
 
 sns.set_theme(style="whitegrid")  # Seaborn styling
 
-# ------------------------------
-# Basic Visualisations
-# ------------------------------
-
-
+# BASIC VISUALISATIONS
 def basic_visualisations(loaded_data):
     while True:
         print("\n--- Basic Visualisations ---")
@@ -29,8 +25,6 @@ def basic_visualisations(loaded_data):
             print("Invalid choice. Please try again.")
 
 # Display a pie chart showing the distribution of videos across all categories.
-
-
 def plot_category_distribution(data):
     categories = [video.get('category_id', 'Unknown') for video in data]
     counts = Counter(categories)
@@ -80,8 +74,6 @@ def plot_category_distribution(data):
 # The pie chart visualizes the proportion of trending videos across different categories, highlighting the most dominant genres in the dataset.
 
 # Generate histograms of key engagement metrics, including views, likes, and comment counts.
-
-
 def plot_engagement_histograms(data):
     views = [int(video.get('views', 0)) for video in data]
     likes = [int(video.get('likes', 0)) for video in data]
@@ -105,11 +97,7 @@ def plot_engagement_histograms(data):
     plt.show()
 # Histograms display the frequency distribution of views, likes, and comments, helping to identify common engagement ranges and skewness in the data.
 
-# ------------------------------
-# Intermediate Visualisations
-# ------------------------------
-
-
+# INTERMEDIATE VISUALISATIONS
 def intermediate_visualisations(loaded_data):
     while True:
         print("\n--- Intermediate Visualisations ---")
@@ -164,8 +152,6 @@ def plot_trending_duration_line(data):
 # The line chart tracks the average trending duration for each category, revealing which types of content tend to stay trending for longer periods.
 
 # Create bar charts comparing engagement metrics(likes, dislikes, comments) across the top-performing videos.
-
-
 def plot_top_video_engagement_grouped(data):
     # Top 10 videos by views
     top_videos = sorted(data, key=lambda x: int(x['views']), reverse=True)[:10]
@@ -195,12 +181,8 @@ def plot_top_video_engagement_grouped(data):
     plt.show()
 # The grouped bar chart compares likes, dislikes, and comments for the top 10 videos, offering a direct comparison of engagement intensity.
 
-# ------------------------------
-# Advanced Visualisations
-# ------------------------------
+# ADVANCED VISUALISATIONS
 # Develop an interactive dashboard that allows users to explore key trends, filter by category or channel, and dynamically visualise engagement metrics.
-
-
 def advanced_visualisations(loaded_data):
     while True:
         print("\n--- Advanced Visualisations ---")
@@ -220,8 +202,6 @@ def advanced_visualisations(loaded_data):
 # The advanced visualization menu serves as an interactive dashboard, allowing users to navigate through complex insights like anomalies and tag trends.
 
 # Implement visual overlays to highlight anomalies or unusual engagement patterns, such as high likes-to-dislikes ratios or videos with rapid spikes in views.
-
-
 def plot_engagement_anomalies(data):
     ratios = []
     titles = []
@@ -243,8 +223,6 @@ def plot_engagement_anomalies(data):
 # This visualization highlights videos with unusual engagement patterns, specifically focusing on likes-to-dislikes ratios to detect anomalies.
 
 # Incorporate tag-based word clouds or frequency charts to visualise trending themes and topics across videos.
-
-
 def plot_tag_wordcloud(data):
     all_tags = " ".join(
         video['tags'].replace("|", " ")

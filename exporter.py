@@ -5,8 +5,6 @@ import json
 json_output_path = "output/exported_data.json"
 
 # export data to csv
-
-
 def export_data_csv(data):
     if not os.path.exists("output/exports"):
         os.makedirs("output/exports")
@@ -17,8 +15,6 @@ def export_data_csv(data):
     print("exporting data as csv...")
 
     # export data to json
-
-
 def export_data_json(data):
     if not os.path.exists("output/exports"):
         os.makedirs("output/exports")
@@ -81,8 +77,6 @@ def top_10_trending_videos(loaded_data):
 # The top 10 trending videos export lists the highest-performing content based on views, providing a snapshot of the most popular videos in the dataset.
 
 # Export detailed information for a selected video in JSON format.
-
-
 def selected_video_details(loaded_data):
     # Ensure export directory exists
     if not os.path.exists("output/exports"):
@@ -112,8 +106,6 @@ def selected_video_details(loaded_data):
 # The selected video details export function allows users to save specific metadata for individual videos, facilitating focused analysis outside the application.
 
 # Export aggregated engagement metrics per category (averages, totals) in JSON format.
-
-
 def export_category_metrics(loaded_data):
     # Ensure export directory exists
     if not os.path.exists("output/exports"):
@@ -161,8 +153,6 @@ def export_category_metrics(loaded_data):
 # This export aggregates engagement metrics by category, providing averages and totals to facilitate comparative analysis of content genres.
 
 # Save filtered datasets based on user-selected categories, channels, or trending periods.
-
-
 def filter_by_category(loaded_data):
     print("Filter by category")
 
@@ -391,8 +381,6 @@ def export_anomaly_detection(loaded_data):
 # Anomaly detection was performed by calculating likes-to-dislikes ratios and identifying videos exceeding a statistical threshold defined as the mean plus two standard deviations.
 
 # Export predictive trending duration results for videos, allowing further analysis or integration with other systems.
-
-
 def export_predictive_trending_duration(loaded_data):
     if not os.path.exists("output/exports"):
         os.makedirs("output/exports")
