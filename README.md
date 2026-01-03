@@ -25,7 +25,6 @@ A comprehensive Python-based tool for analyzing and visualizing YouTube trending
 ## Technologies Used
 
 - **Python 3**: Core application logic.
-- **Pandas**: Data manipulation and handling.
 - **Matplotlib & Seaborn**: High-quality data visualizations.
 - **WordCloud**: Visualizing trending tags.
 - **Standard Libraries**: `csv`, `json`, `statistics`, `collections`.
@@ -51,22 +50,42 @@ A comprehensive Python-based tool for analyzing and visualizing YouTube trending
 
 1. **Clone the repository**:
    ```bash
-git clone <https://github.com/JeffreyOben/cps4003-youtube-trending-analysis.git>
+   git clone https://github.com/JeffreyOben/cps4003-youtube-trending-analysis.git
    cd cps4003-youtube-trending-analysis
    ```
 
-2. **Create a virtual environment**:
+2. **Create and Activate a Virtual Environment**:
+   
+   *macOS / Linux*:
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   python3 -m venv venv
+   source venv/bin/activate
    ```
 
-3. **Install dependencies**:
+   *Windows*:
+   ```bash
+   python -m venv venv
+   venv\Scripts\activate
+   ```
+
+3. **Install Dependencies** (ensure venv is active):
    ```bash
    pip install -r requirements.txt
    ```
 
 ## Usage
+
+**1. Activate the Virtual Environment** (if not already active):
+
+*macOS / Linux*:
+```bash
+source venv/bin/activate
+```
+
+*Windows*:
+```bash
+venv\Scripts\activate
+```
 
 Run the main script to start the interactive menu:
 
