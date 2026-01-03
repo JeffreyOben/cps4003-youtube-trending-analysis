@@ -1,6 +1,9 @@
 from collections import Counter
 import statistics
 
+# Retrieve the total number of videos and channels in the dataset.
+# List all unique video categories and the number of trending videos per category.
+# Identify the top 10 trending videos based on key engagement metrics such as views, likes, and comment count.
 def basic_analysis(loaded_data):
     print("\n--- Basic Analysis ---")
 
@@ -63,7 +66,9 @@ def basic_analysis(loaded_data):
         )
 
     input("\nPress Enter to return...\n")
+# Basic analysis provides an overview of the dataset by counting total videos, channels, and categories. It also lists the top 10 videos by views, likes, and comments to highlight trending content.
 
+# Calculate average engagement metrics (likes, dislikes, comments) for each category.
 def intermediate_analysis(loaded_data):
     print("\n--- Intermediate Analysis ---")
 
@@ -104,7 +109,9 @@ def intermediate_analysis(loaded_data):
         print(f"Category {cat_id}: {count} videos")
 
     input("\nPress Enter to return...\n")
+# Intermediate analysis calculates average views and likes to gauge general engagement. It also shows the distribution of videos across the top categories.
 
+# Retrieve detailed information for a specific video using its video_id or title.
 def get_video_details(loaded_data):
     video_id = input("\nEnter video id: ").strip()
 
@@ -125,6 +132,7 @@ def get_video_details(loaded_data):
         
     print("Video ID not found.")
     input("\nPress Enter to return...\n")
+# The video details function retrieves and displays detailed metadata for a specific video, including channel, category, and engagement statistics, allowing for focused inspection.
 
 def advanced_analysis(loaded_data):
     print("\n--- Advance Analysis ---")
@@ -309,6 +317,7 @@ def show_anomaly_detection(loaded_data):
             print()
 
     input("Press Enter to return...")
+# Anomaly detection flags videos with unusual engagement patterns, such as high likes-to-dislikes ratios, helping to identify potential outliers or viral anomalies.
 
 
 # Predict the potential trending duration of a video using features such as publish time, category, and early engagement metrics.
