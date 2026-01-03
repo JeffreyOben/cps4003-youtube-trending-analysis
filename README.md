@@ -51,8 +51,8 @@ A comprehensive Python-based tool for analyzing and visualizing YouTube trending
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd cps4003-youtube-trending-analysisCopy
+git clone <https://github.com/JeffreyOben/cps4003-youtube-trending-analysis.git>
+   cd cps4003-youtube-trending-analysis
    ```
 
 2. **Create a virtual environment**:
